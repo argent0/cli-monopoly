@@ -115,7 +115,7 @@ class Game implements Show {
 
 										owner.receive(property.rent());
 									}
-								},
+								}, // end handle owned
 								() -> {
 									System.out.println("Es propiedad del banco.");
 									if (current_player.completed_rounds() >= 1) {
@@ -131,12 +131,11 @@ class Game implements Show {
 									} else {
 										System.out.println("El Jugador aun no ha completado una ronda");
 									}
-								}
-							);
-
-						}
-					);
-				}
+								} // end handle not owned
+							); // End hanfle if owned
+						} // end handle enter privatr property
+					); // End handle effects
+				} // End apply effects of landing cell
 
 				// TODO: Check if player has debt
 
@@ -148,7 +147,7 @@ class Game implements Show {
 
 			} //end if in_jail
 
-		} // end while
+		} // end while completed_rounds < 11
 	}
 
 	/** Pick up a card and apply its effects

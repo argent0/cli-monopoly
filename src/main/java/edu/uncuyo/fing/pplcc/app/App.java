@@ -11,10 +11,9 @@ public class App {
 	public static void main( String[] args ) throws Piece.NoRemainingPiecesException {
 
 		Game game;
-
 		game = new Game(4);
-
 		game.run();
+
 	}
 
 }
